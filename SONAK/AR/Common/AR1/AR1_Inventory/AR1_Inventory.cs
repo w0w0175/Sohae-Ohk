@@ -39,7 +39,7 @@ public class AR1_Inventory : MonoBehaviour
             Instance = this;
          StartCoroutine("StartInven");
     }
-    IEnumerator StartInven()
+    IEnumerator StartInven() //처음 시작할 때 기본적으로 있어야 하는 아이템 추가 함수
     {
         switch (GameManager.instance.ChapterNum)
         {
@@ -96,7 +96,7 @@ public class AR1_Inventory : MonoBehaviour
     {
         slots = slotParent.GetComponentsInChildren<AR1_Slot>();
     }
-    public void FreshSlot()
+    public void FreshSlot() //슬롯을 새로고침 하는 함수
     {
         int i = 0;
 
@@ -112,7 +112,7 @@ public class AR1_Inventory : MonoBehaviour
         items = items.Distinct().ToList();
     }
 
-    public void Additem(AR1_Item _item)
+    public void Additem(AR1_Item _item) //아이템을 슬롯에 추가하는 함수
     {
         if (items.Count < slots.Length)
         {
@@ -124,7 +124,7 @@ public class AR1_Inventory : MonoBehaviour
             print("슬롯이 가득 차 있습니다.");
         }
     }
-    public void AR1C0_Items()
+    public void AR1C0_Items() //챕터 0일 경우 아이템 추가
     {
         if (AR1C0_MoveManager.Instance.GetNote)
         {
@@ -132,7 +132,7 @@ public class AR1_Inventory : MonoBehaviour
             Additem(Note);
         }
     }
-    public void AR1C1_Items()
+    public void AR1C1_Items() //챕터 1일 경우 아이템 추가
     {
         if (AR1C1_MovingManager.Instance.isCON == true)
         {

@@ -128,11 +128,11 @@ public class AR1C2_Q3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         rect.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other) //물체가 포인트를 방문한 수를 토대로 최단거리인 지 판단
     {
         if (other.tag == "Points")
         {
-            Answer -= 2;
+            Answer -= 2; //최단 거리가 아닌 포인트를 방문할 경우
         }
 
         if (other.name == "APoint")
@@ -141,8 +141,7 @@ public class AR1C2_Q3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
             APoint.SetActive(false);
 
-            Answer += 1;
-            Debug.Log("anjwl?");
+            Answer += 1; //최단거리에 포함된 포인트를 방문한 경우
         }
 
         if (other.name == "APoint (1)")

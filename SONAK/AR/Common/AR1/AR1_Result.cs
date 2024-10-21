@@ -26,13 +26,13 @@ public class AR1_Result : MonoBehaviour
             Instance = this;
     }
 
-    public void FailStatue()
+    public void FailStatue() //실패했을 경우 호출되는 함수
     {
-        Icons.SetActive(false);
-        Failure.SetActive(true);
+        Icons.SetActive(false); //설정 인벤토리 등 아이콘들 안 보이게 처리
+        Failure.SetActive(true); //실패창 띄우기
     }
 
-    public void SuccessStatue()
+    public void SuccessStatue() //성공했을 경우 호출되는 함수
     {
         Icons.SetActive(false);
         Success.SetActive(true);
@@ -40,7 +40,7 @@ public class AR1_Result : MonoBehaviour
 
         SetBestRecord();
     }
-    void SetBestRecord()
+    void SetBestRecord() //다른 분이 작성하신 코드 (최단시간 플레이 한 타임을 저장하고 갱신하는 함수)
     {
         float currTimeRecord = TimeManager.instance.GetTime();
         float prevTimeRecord = DataController.instance.LoadTimeRecord();
@@ -58,18 +58,18 @@ public class AR1_Result : MonoBehaviour
         GameManager.instance.ExitChapter(true);
     }
 
-    public void Clicktryagain()
+    public void Clicktryagain() //실패해서 다시하기를 눌렀을 경우
     {
         Failure.SetActive(false);
         Icons.SetActive(true);
         if (AR1_Timer.TimeEnd) // 타임오버
         {
             AR1_Timer.TimeEnd = false;
-            SceneManager.LoadScene("AR1");
+            SceneManager.LoadScene("AR1"); //타임오버일 경우에는 처음으로 돌아감
         }
         else
         {
-            if (AR1C1.activeSelf == true)
+            if (AR1C1.activeSelf == true)  //챕터 1에서 게임을 실패하는 경우에 따라 다시하기를 눌렀을 때 실행되는 함수가 다름
             {
                 AR1C1_MovingManager.Instance.TimeStart();
                 if (AR1C1_MovingManager.Instance.Q2Fail)

@@ -50,7 +50,7 @@ public class AR1_Detail : MonoBehaviour
             Instance = this;
         }
     }
-    public void ClicktoUse()
+    public void ClicktoUse() //아이템을 사용할 때 실행되는 함수
     {
         SoundManager.instance.PlaySFX(Sfx.Click_Button);
         if (AR1_Slot.fordetail > 9)
@@ -65,22 +65,22 @@ public class AR1_Detail : MonoBehaviour
             partkey = true;
             Explain.SetActive(false);
         }
-        if (AR1C1_MovingManager.Instance != null)
+        if (AR1C1_MovingManager.Instance != null) //챕터 1이 실행 중일 때
         {
-            if (AR1C1_MovingManager.Instance.forpaper == true || AR1_Slot.ispaper == true)
+            if (AR1C1_MovingManager.Instance.forpaper || AR1_Slot.ispaper)
             {
                 AR1_Slot.ispaper = false;
                 AR1C1_Paper();
                 Inventory.SetActive(false);
                 AR1_Block.UsingItem = true;
             }
-            if (AR1C1_MovingManager.Instance.forQ2 == true && ExBtnText.text == "사용하기")
+            if (AR1C1_MovingManager.Instance.forQ2 && ExBtnText.text == "사용하기")
             {
                 AR1C1_Quiz2();
                 Inventory.SetActive(false);
                 AR1_Block.UsingItem = true;
             }
-            if (AR1C1_MovingManager.Instance.forkey == true && ExBtnText.text == "사용하기")
+            if (AR1C1_MovingManager.Instance.forkey && ExBtnText.text == "사용하기")
             {
                 AR1C1_Key();
                 Inventory.SetActive(false);

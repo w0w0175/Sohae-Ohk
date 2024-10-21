@@ -561,7 +561,7 @@ public class AR1C1_MovingManager : MonoBehaviour
         AR1C1_Q2.SetActive(true);
         Q2Around = true;
     }
-    public void ReturnBooks() //퀴즈 2에서 되돌리기를 선택한 경우
+    public void ReturnBooks() //퀴즈 2에서 비우기를 선택한 경우
     {
         AR1_Block.UsingItem = false;
         checkbooks = 0;

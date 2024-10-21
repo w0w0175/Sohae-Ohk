@@ -75,7 +75,7 @@ public class AR1_Slot : MonoBehaviour, IPointerClickHandler
         { 
             _item = value;
 
-            if (_item != null)
+            if (_item != null) //아이템이 있을 시 아이템을 슬롯에 표시
             {
                 image.sprite = item.itemImage;
                 image.color = new Color(1, 1, 1, 1);
@@ -87,13 +87,13 @@ public class AR1_Slot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnClickSlot()
+    public void OnClickSlot() //아이템을 클릭했을 때
     {
         if (_item != null)
         {
-            Explain.SetActive(true);
+            Explain.SetActive(true); //아이템 설명창이 띄워짐
 
-            if (item.itemName == "AR1C1_KEY")
+            if (item.itemName == "AR1C1_KEY") //아이템 이름에 따라 설명창에 띄워지는 내용이 다름
             {
                 TitleText.text = "교수의 열쇠";
                 DetailImage.GetComponent<Image>().sprite = item.itemImage;

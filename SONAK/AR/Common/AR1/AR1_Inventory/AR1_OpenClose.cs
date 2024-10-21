@@ -16,7 +16,7 @@ public class AR1_OpenClose : MonoBehaviour
             Instance = this;
     }
 
-    public void ClicktoCloseEx()
+    public void ClicktoCloseEx() //설명창 끄기를 눌렀을 때 사용되는 함수
     {
         Explain.SetActive(false);
         SoundManager.instance.PlaySFX(Sfx.Click_Button);
@@ -30,12 +30,12 @@ public class AR1_OpenClose : MonoBehaviour
         AR1_Slot.Putnum = 0;
         AR1_Slot.fordetail = 0;
     }
-    public void ClicktoCloseInven()
+    public void ClicktoCloseInven() //인벤토리 끄기를 눌렀을 때 사용되는 함수
     {
         Inventory.SetActive(false);
         SoundManager.instance.PlaySFX(Sfx.Click_Button);
     }
-    public void ClicktoOpen()
+    public void ClicktoOpen() //인벤토리를 클릭했을 때 사용되는 함수
     {
         Inventory.SetActive(true);
         Explain.SetActive(false);

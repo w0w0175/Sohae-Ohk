@@ -25,7 +25,7 @@ public class AR1_Manager : MonoBehaviour
 
     void Awake()
     {
-        IsAR1 = true;
+        IsAR1 = true; //아이란 루트 1이 실행되고 있음을 알리는 bool
         if (Instance == null)
             Instance = this;
     }
@@ -42,7 +42,7 @@ public class AR1_Manager : MonoBehaviour
     {
         if (AR1C0.activeSelf)
         {
-            switch (AR1C0_MoveManager.Instance.progress)
+            switch (AR1C0_MoveManager.Instance.progress) //퀴즈 진행도마다 진행도바가 바뀌게 하는 함수
             {
                 case 0:
                     progress0.SetActive(true);
@@ -166,7 +166,7 @@ public class AR1_Manager : MonoBehaviour
         }
         else if (AR1C4.activeSelf)
         {
-            progress0.SetActive(false);
+            progress0.SetActive(false); //진행도바가 필요 없는 경우 아예 안 보이게 처리
         }
     }
     public void SetChapter()
