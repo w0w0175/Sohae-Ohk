@@ -18,7 +18,7 @@ public class ER1C3_Q2Manager : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         if (Green.activeSelf && Green.GetComponent<RectTransform>().anchoredPosition.x >= -150 && Green.GetComponent<RectTransform>().anchoredPosition.x <= -110
-            && Green.GetComponent<RectTransform>().anchoredPosition.y >= -65 && Green.GetComponent<RectTransform>().anchoredPosition.y <= -25)
+            && Green.GetComponent<RectTransform>().anchoredPosition.y >= -65 && Green.GetComponent<RectTransform>().anchoredPosition.y <= -25) //만약 범위가 정답 범위일 경우
 
         {
             ER1C3_MoveManager.Instance.Q2Check = true;
@@ -28,7 +28,7 @@ public class ER1C3_Q2Manager : MonoBehaviour, IPointerClickHandler
             ER1C3_MoveManager.Instance.Q2Check = false;
         }
     }
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData) //클릭했을 때 주변 범위에 초록색 상자를 만드는 함수
     {
         Green.SetActive(true);
         pos = eventData.position;

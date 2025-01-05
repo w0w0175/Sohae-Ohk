@@ -175,11 +175,11 @@ public class AR2C3_MoveManager : MonoBehaviour
         GameObject.Find("AR2C3_1").GetComponent<AR2_InteractionController>().Text();
     }
 
-    public void ChapterStart()
+    public void ChapterStart() //챕터 시작할 때
     {
         BackgroundReset();
 
-        if (KitchenEnd == false && HallwayEnd == false && RoomEnd == false)
+        if (KitchenEnd == false && HallwayEnd == false && RoomEnd == false) //들렸던 곳에 따라 bool값이 달라짐 -> 이를 통해 다른 선택지 제공
         {
             Choice_3.SetActive(true);
             Choice3_1.text = "일단 밖으로 나간다";
@@ -255,7 +255,7 @@ public class AR2C3_MoveManager : MonoBehaviour
     public void Room_1_2()
     {
         Choice_3.SetActive(false);
-        Girlpoint -= 5;
+        Girlpoint -= 5; //선택지에 따라 다른 호감도
 
         GameObject.Find("AR2C3_3").GetComponent<AR2_InteractionController>().Text();
     }
@@ -712,7 +712,7 @@ public class AR2C3_MoveManager : MonoBehaviour
 
         GameObject.Find("AR2C3_41").GetComponent<AR2_InteractionController>().Text();
     }
-    public void ChapterResult()
+    public void ChapterResult() //선택에 따라 다른 결과 도출
     {
         if (GirlSuccess && FirstSuccess)
         {

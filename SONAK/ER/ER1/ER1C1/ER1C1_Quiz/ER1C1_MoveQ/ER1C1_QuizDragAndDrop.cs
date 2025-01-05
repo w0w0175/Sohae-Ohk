@@ -62,7 +62,7 @@ public class ER1C1_QuizDragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragH
 
     void Update()
     {
-        if (ismoving)
+        if (ismoving) //움직이고 있을 때는 클릭이 안 되게 막아놓음
         {
             sheep.GetComponent<Image>().raycastTarget = false;
             wolf.GetComponent<Image>().raycastTarget = false;
@@ -75,7 +75,7 @@ public class ER1C1_QuizDragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragH
             grass.GetComponent<Image>().raycastTarget = true;
         }
 
-        if (sh == 1)
+        if (sh == 1) 
         {
            // erdenshpos = sheep.transform.position - erden.transform.position;
             erdenshpos = sheep.GetComponent<RectTransform>().anchoredPosition - erden.GetComponent<RectTransform>().anchoredPosition;

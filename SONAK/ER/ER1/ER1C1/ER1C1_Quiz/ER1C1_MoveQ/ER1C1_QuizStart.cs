@@ -20,7 +20,7 @@ public class ER1C1_QuizStart : MonoBehaviour, IDropHandler
         position = rect.anchoredPosition;
     }
 
-    public void OnDrop(PointerEventData eventData)
+    public void OnDrop(PointerEventData eventData) //시작하는 부분에 마우스를 놨을 때
     {
         if (eventData.pointerDrag != null)
         {
@@ -32,7 +32,7 @@ public class ER1C1_QuizStart : MonoBehaviour, IDropHandler
 
             erdenatstart = 1;
 
-            if (ER1C1_QuizDragAndDrop.sh == 4)
+            if (ER1C1_QuizDragAndDrop.sh == 4) //숫자로 클릭 제한 관리 (
             {
                 ER1C1_QuizDragAndDrop.sh = 2;
 
@@ -44,7 +44,7 @@ public class ER1C1_QuizStart : MonoBehaviour, IDropHandler
 
                 ER1C1_QuizAnswer.ss = false;
             }
-            else if (ER1C1_QuizDragAndDrop.sh == 0)
+            else if (ER1C1_QuizDragAndDrop.sh == 0) //0일 경우 클릭 시 주인공 손 위치로 이동
             {
                 sheep.GetComponent<RectTransform>().anchoredPosition = new Vector2(245, 37);
             }
